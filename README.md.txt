@@ -1,0 +1,2 @@
+-First run the script "script_create_schema_notes_and_tables" to create the schema "notes", and create the tables "users", "categories", and "notes".
+-Then run the script "script_insert_data" to insert values inside the tables.
