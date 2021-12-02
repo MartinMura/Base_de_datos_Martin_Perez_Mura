@@ -14,14 +14,20 @@ email VARCHAR(100)
 CREATE TABLE notes (
 id INT NOT NULL PRIMARY KEY auto_increment,
 user_id int,
-category_id INT,
 title VARCHAR(100),
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 description TEXT,
 can_delete VARCHAR(10),
-FOREIGN KEY (category_id) REFERENCES categories(id),
 FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE notes_categories(
+id INT NOT NULL PRIMARY KEY auto_increment,
+notes_id int,
+category_id int,
+FOREIGN KEY (notes_id) REFERENCES notes(id),
+FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
 

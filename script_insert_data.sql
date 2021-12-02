@@ -1,16 +1,14 @@
-use notes;
-
-INSERT INTO categories (category_name)
-VALUES ("música"), 
-("entretenimiento"), 
-("juegos"), 
-("educativo"), 
-("infantil"), 
-("audiovisual"), 
-("DIY"), 
-("cocina"), 
-("limpieza"), 
-("tutorial");
+INSERT INTO categories
+VALUES (1, "música"), 
+(2, "entretenimiento"), 
+(3, "juegos"), 
+(4, "educativo"), 
+(5, "infantil"), 
+(6, "audiovisual"), 
+(7, "DIY"), 
+(8, "cocina"), 
+(9, "limpieza"), 
+(10, "tutorial");
 
 INSERT INTO users (id, name, email)
 VALUES (DEFAULT, "Martin", "martinpm@gmail.com"),
@@ -24,19 +22,30 @@ VALUES (DEFAULT, "Martin", "martinpm@gmail.com"),
 (DEFAULT, "Elias", "elias09@gmail.com"),
 (DEFAULT, "Armando", "armando7823@gmail.com");
 
-INSERT INTO notes (id, user_id, category_id, title, description, can_delete)
-VALUES (DEFAULT,2, 2, "Videos graciosos", "compilacion de links", "YES"),
-(DEFAULT, 5, 4, "Biología","apuntes", "NO"),
-(DEFAULT, 1, 6, "Edicion videos", "apuntes", "NO"),
-(DEFAULT, 2, 9, "Productos", NULL, "YES"),
-(DEFAULT, 3, 7,"Base de datos 101", "apuntes", "NO"),
-(DEFAULT, 1, 1, "Discografía ACDC", "Discografia con historia", "YES"),
-(DEFAULT, 5, 1, "Recitales próximos", "recitales en Buenos Aires", "YES"),
-(DEFAULT, 8, 4, "Matematicas", "fórmulas", "NO"),
-(DEFAULT, 10, 4, "MySQL", "apuntes", "NO"),
-(DEFAULT, 3, 5, "Programas", "television para chicos", "YES");
+INSERT INTO notes (id, user_id, title, description, can_delete)
+VALUES (DEFAULT, 2, "Videos graciosos", "compilacion de links", "YES"),
+(DEFAULT, 5, "Biología","apuntes", "NO"),
+(DEFAULT, 1, "Edicion videos", "apuntes", "NO"),
+(DEFAULT, 2, "Productos", NULL, "YES"),
+(DEFAULT, 3, "Base de datos 101", "apuntes", "NO"),
+(DEFAULT, 1, "Discografía ACDC", "Discografia con historia", "YES"),
+(DEFAULT, 5, "Recitales próximos", "recitales en Buenos Aires", "YES"),
+(DEFAULT, 8, "Matematicas", "fórmulas", "NO"),
+(DEFAULT, 10, "MySQL", "apuntes", "NO"),
+(DEFAULT, 3, "Programas", "television para chicos", "YES");
+INSERT INTO notes_categories
+VALUES (1,2,3),
+(2,4,6),
+(3,9,1),
+(4,8,4),
+(5,7,2),
+(6,1,5),
+(7,3,7),
+(8,5,9),
+(9,10,8),
+(10,6,10);
 
 
 
+select * from users
 
-select * from notes;
