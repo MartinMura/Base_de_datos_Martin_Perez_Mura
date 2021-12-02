@@ -15,9 +15,9 @@ CREATE TABLE notes (
 id INT NOT NULL PRIMARY KEY auto_increment,
 user_id int,
 title VARCHAR(100),
+description VARCHAR(200),
 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-description TEXT,
 can_delete VARCHAR(10),
 FOREIGN KEY (user_id) REFERENCES users(id)
 );
